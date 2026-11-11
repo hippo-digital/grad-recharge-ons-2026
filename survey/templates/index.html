@@ -1,0 +1,17 @@
+{% extends "base.html" %}
+{% from "components/panel/_macro.njk" import onsPanel %}
+
+{% set page_title = "Example page" %}
+
+{% block main %}
+    <h1>Example page</h1>
+    <p>This is an example page. It uses the ONS Design System page layout.</p>
+
+    {% call onsPanel({ "variant": "info" }) %}
+        <p>
+            Use the Design System components as Jinja macros. Import a macro
+            from <code>components/&lt;name&gt;/_macro.njk</code>, as this page
+            does for the panel.
+        </p>
+    {% endcall %}
+{% endblock %}

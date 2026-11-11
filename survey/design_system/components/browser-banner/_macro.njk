@@ -1,0 +1,20 @@
+{% macro onsBrowserBanner(params) %}
+    {% if params.lang == "cy" %}
+        {% set bannerLeadingText = 'Nid yw’r wefan hon yn cefnogi eich porwr mwyach.' %}
+        {% set bannerLinkUrl = 'https://cy.ons.gov.uk/help/browsers' %}
+        {% set bannerCta = 'Gallwch <a class="ons-browser-banner__link" href="' + bannerLinkUrl + '">ddiweddaru eich porwr i’r fersiwn ddiweddaraf</a>.' %}
+    {% else %}
+        {% set bannerLeadingText = 'This website no longer supports your browser.' %}
+        {% set bannerLinkUrl = 'https://www.ons.gov.uk/help/browsers' %}
+        {% set bannerCta = 'You can <a class="ons-browser-banner__link" href="' + bannerLinkUrl + '">upgrade your browser to the latest version</a>.' %}
+    {% endif %}
+
+    <div class="ons-browser-banner">
+        <div class="ons-container{{ ' ons-container--full-width' if params.fullWidth }}{{ ' ons-container--wide' if params.wide }}">
+            <p class="ons-browser-banner__content">
+                <span class="ons-browser-banner__lead">{{ bannerLeadingText }}</span
+                ><span class="ons-browser-banner__cta"> {{ bannerCta | safe }}</span>
+            </p>
+        </div>
+    </div>
+{% endmacro %}

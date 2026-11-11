@@ -1,0 +1,3 @@
+# Downloaded from the ONS Design System. Don't edit these files.
+# Use scripts/update_design_system.py to change the version.
+survey/design_system/** linguist-vendored

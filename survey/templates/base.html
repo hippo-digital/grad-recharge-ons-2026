@@ -1,0 +1,23 @@
+{#
+    The base layout for all pages. It extends the ONS Design System page
+    template, which adds the header, the footer, and the CSS and JavaScript
+    from the ONS CDN.
+
+    A page extends this file, sets "page_title" and fills the "main" block.
+    See the Design System for the "pageConfig" options:
+    https://service-manual.ons.gov.uk/design-system/foundations/page-template
+#}
+{% extends "layout/_template.njk" %}
+
+{% set service_name = "ONS Well-being Survey" %}
+{% set pageConfig = {
+    "title": page_title ~ " - " ~ service_name if page_title else service_name,
+    "header": {
+        "title": service_name,
+        "titleUrl": url_for("survey.index"),
+        "mastheadLogoUrl": url_for("survey.index")
+    },
+    "footer": {
+        "oglLink": true
+    }
+} %}

@@ -1,0 +1,11 @@
+{% from "components/icon/_macro.njk" import onsIcon %}
+
+{% macro onsExternalLink(params) %}
+    <a href="{{ params.url }}" class="ons-external-link{{ ' ' + params.classes if params.classes else '' }}" target="_blank" rel="noopener">
+        <span class="ons-external-link__text"> {{- params.text | safe -}} </span
+        ><span class="ons-external-link__icon">&nbsp;{{- onsIcon({"iconType": 'external-link'}) -}} </span
+        ><span class="ons-external-link__new-window-description ons-u-vh"
+            >({{- params.newWindowDescription | default("opens in a new tab") -}})</span
+        ></a
+    >
+{% endmacro %}
